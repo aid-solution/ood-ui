@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavage - App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header d-flex">
+        <div class="identity d-flex content-start">
+          <h3>Etablissement OOD</h3>
+        </div>
+        <div class="switch-action d-flex content-center">
+          <label class="toggle">
+            <span class="toggle-label">Lavage</span>
+            <input class="toggle-checkbox" type="checkbox" />
+            <div class="toggle-switch"></div>
+            <span class="toggle-label">Lubrifiant</span>
+          </label>
+        </div>
+      </div>
+      <div class="content">
+        <div class="lavage-content">
+          <h1>OOD - Lavage de voitures</h1>
+          <div class="d-flex">
+            <div class="operate">
+              <div class="type-lavage">
+                <form>
+                  <h3>Lavage</h3>
+                  <input type="hidden" id="id-lavage">
+                  <div class="form-group">
+                    <label for="voiture">Plaque</label>
+                    <input type="text" required id="voiture" list="list-voiture">
+                    <span id="voiture-wrong"></span>
+                    <datalist id="list-voiture"></datalist>
+                  </div>
+                  <div class="form-group">
+                    <label for="lavage">Categorie Lavage</label>
+                    <input type="text" required id="lavage" list="list-categorie">
+                    <span id="lavage-wrong"></span>
+                    <datalist id="list-categorie"></datalist>
+                  </div>
+                  <div class="form-group">
+                    <label for="prix">Prix Lavage</label>
+                    <input type="text" required id="prix">
+                    <span id="prix-wrong"></span>
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" id="lavage-action" value="Ajouter">
+                  </div>
+                </form>
+                <form>
+                  <h3>Type Lavage</h3>
+                  <div class="form-group">
+                    <label for="typelavage">Type lavage</label>
+                    <input type="text" required id="typelavage">
+                    <span id="typelavage-wrong"></span>
+                  </div>
+                  <div class="form-group d-flex">
+                    <button id="type-action" type="submit">Ajouter</button>
+                    <button>Voir</button>
+                  </div>
+                </form>
+                <form>
+                  <h3>Categorie Lavage</h3>
+                  <div class="form-group">
+                    <label for="categorietype">Type</label>
+                    <input type="text" required id="categorietype" list="list-type">
+                    <span id="categorietype-wrong"></span>
+                    <datalist id="list-type"></datalist>
+                  </div>
+                  <div class="form-group">
+                    <label for="categoriedesignation">Designation</label>
+                    <input type="text" required id="categoriedesignation">
+                    <span id="categoriedesignation-wrong"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="categoriemodele">Modele</label>
+                    <input type="text" required id="categoriemodele" list="list-model">
+                    <span id="categoriemodele-wrong"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="categorie-prix">Prix</label>
+                    <input type="text" required id="categorieprix">
+                    <span id="categorieprix-wrong"></span>
+                  </div>
+                  <div class="form-group d-flex">
+                    <button type="submit" id="categorie-action">Ajouter</button>
+                    <button>Voir</button>
+                  </div>
+                </form>
+                <form>
+                  <h3>Voiture</h3>
+                  <div class="form-group">
+                    <label for="voitureplaque">Immatriculation</label>
+                    <input type="text" required id="voitureplaque">
+                    <span id="voitureplaque-wrong"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="voituremodele">Modele</label>
+                    <input type="text" required id="voituremodele" list="list-model">
+                    <span id="voituremodele-wrong"></span>
+                    <datalist id="list-model">
+                      <option value="V8">
+                      <option value="autre">
+                    </datalist>
+                  </div>
+                  <div class="form-group d-flex">
+                    <button type="submit" id="voiture-action">Ajouter</button>
+                    <button>Voir</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="history">
+              <div class="scrollable">
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="--w:5%">#</th>
+                      <th style="--w:10%">Date</th>
+                      <th style="--w:10%">Plaque</th>
+                      <th style="--w:15%">Modele</th>
+                      <th style="--w:20%">Lavage</th>
+                      <th style="--w:20%">Categorie</th>
+                      <th style="--w:10%">Prix</th>
+                      <th style="--w:20%"><i class="fa-solid fa-cogs"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lubrifiant-content"></div>
+      </div>
+      <div class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+    <script src="api.js"></script>
+  </body>
+</html>

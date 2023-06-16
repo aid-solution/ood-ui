@@ -1,0 +1,326 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, ".SFNSText-Regular", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 1440px;
+}
+
+.container:has(.toggle-checkbox:checked) .lavage-content {
+  display: none;
+}
+
+.container:has(.toggle-checkbox:checked) .lubrifiant-content {
+  display: block;
+}
+
+.switch-action {
+  width: 200px;
+  align-items: center;
+}
+
+.switch-action .toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.switch-action .toggle-switch {
+  display: inline-block;
+  background: #2765a0;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.switch-action .toggle-switch:before,
+.switch-action .toggle-switch:after {
+  content: "";
+}
+.switch-action .toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.switch-action .toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.switch-action .toggle-checkbox:checked + .toggle-switch {
+  background: #56c080;
+}
+.switch-action .toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.switch-action .toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.switch-action .toggle-label {
+  position: relative;
+  top: 2px;
+  font-weight: 600;
+}
+
+.content {
+  height: calc(100vh - 90px);
+}
+
+
+.content .lavage-content {
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #2765a0;
+  padding: 10px;
+}
+
+.content .lavage-content .operate {
+  width: 300px;
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content .lavage-content .operate::-webkit-scrollbar {
+  display: none;
+}
+
+
+.content .lavage-content .operate {
+-ms-overflow-style: none; 
+scrollbar-width: none; 
+}
+
+.content .lavage-content .operate form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.content .lavage-content .operate form .form-group label, 
+.content .lavage-content .operate form .form-group input {
+  width: calc(100% - 20px);
+  margin: 0px 10px;
+}
+
+.content .lavage-content .operate form .form-group label {
+  position: absolute;
+  color: #000;
+  padding-left: 5px;
+  padding-top: 4px;
+  transition: 0.5s;
+}
+
+.content .lavage-content .operate form .form-group input {
+  border-radius: 5px;
+  border : 1px solid black;
+  color: black;
+  padding: 7px;
+}
+
+.content .lavage-content .operate form .form-group input:focus, 
+.content .lavage-content .operate form .form-group input:valid {
+  outline: none;
+  border : 1px solid #2765a0;
+}
+
+.content .lavage-content .operate form .form-group:has(input:focus) label,
+.content .lavage-content .operate form .form-group:has(input:valid) label {
+  font-size: 10px;
+  width: fit-content;
+  margin-top: -6px;
+  margin-left: 20px !important;
+  background: #fff;
+  color: #2765a0;
+  font-weight: 600;
+  padding: 0px 3px;
+  transition: 0.5s;
+}
+
+.content .lavage-content .operate form .form-group input[type="submit"], 
+.content .lavage-content .operate form .form-group.d-flex button {
+  outline: none;
+  border: 1px solid #2765a0;
+  font-weight: 600;
+  margin: 0px 10px !important;
+  padding: 7px 0px !important;
+  cursor: pointer;
+  color: #fff;
+  background: #2765a0;;
+}
+
+.content .lavage-content .operate form .form-group input[type="submit"]:hover,
+.content .lavage-content .operate form .form-group.d-flex button:hover {
+  color: #2765a0;
+  background: white;
+  border: 1px solid #2765a0;
+}
+
+.content .lavage-content .operate form .form-group span {
+  font-size: 10px;
+  margin: 0px 0px 0px 15px;
+}
+
+.content .lavage-content .operate form .form-group span i {
+  color: red;
+}
+
+.content .lavage-content .operate form .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+.content .lavage-content .operate form .form-group.d-flex button {
+  width: 50%;
+  margin: 0px 10px;
+  padding: 5px 0px;
+  border-radius: 5px;
+}
+
+.content .lavage-content .history {
+  width: 1240px;
+}
+
+.content .lavage-content .history .scrollable {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px;
+  overflow:auto;
+}
+
+.content .lavage-content .history .scrollable table {
+  width: 100%;
+  border: 1px solid #2765a0;
+  border-collapse: collapse;
+}
+
+.content .lavage-content .history .scrollable table thead tr, 
+.content .lavage-content .history .scrollable table tbody tr.total {
+  height: 50px;
+}
+
+.content .lavage-content .history .scrollable table thead tr th,
+.content .lavage-content .history .scrollable table tbody tr.total td {
+  position: sticky;
+  top: 0px; 
+  color: white;
+  background: #2765a0;
+  width: var(--w);
+}
+
+.content .lavage-content .history .scrollable table tbody tr.total td {
+  font-weight: 700;
+}
+
+.content .lavage-content .history .scrollable table tbody tr {
+  text-align: center;
+}
+
+.content .lavage-content .history .scrollable table tbody tr:nth-child(2n+1) {
+  color: rgba(128, 128, 128, 0.638);
+}
+
+.content .lavage-content .history .scrollable table tbody tr:nth-child(2n) {
+  background: rgba(95, 158, 160, 0.619);
+  color: white;
+}
+
+.content .lavage-content .history .scrollable table tbody tr:nth-child(2n+1):hover {
+  background: rgba(95, 158, 160, 0.393);
+  color: white;
+}
+
+.content .lavage-content .history .scrollable table tbody tr:nth-child(2n):hover {
+  color: rgba(12, 12, 12, 0.247);
+}
+
+.content .lavage-content .history .scrollable table tbody tr td:last-child button {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.content .lubrifiant-content {
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #56c080;
+  padding: 10px;
+}
+
+.lavage-content, .lubrifiant-content {
+  height: 100%;
+}
+
+.lubrifiant-content {
+  
+  display: none;
+}
+
+.identity {
+  width: calc(100% - 200px);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.content-start {
+  justify-content: start;
+}
+
+.content-center {
+  justify-content: center;
+}
+.content-end {
+  justify-content: end;
+}
+
+.notif {
+  top:20px;
+  right: 50px;
+  width: fit-content;
+  height: 100px;
+  background: white;
+  position: absolute;
+  border: 1px solid #2765a0;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.notif .notif-header {
+  background: #2765a0;
+  border-radius: 3px 3px 0px 0px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif .notif-header h3 {
+  margin: 0;
+  color: white;
+}
+
+.notif .notif-body {
+  padding: 0px 10px;
+}
